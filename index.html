@@ -16,13 +16,19 @@
       class App extends Component{
         constructor(){
           super();
+          this.state {
+            users: {},
+            companies: [],
+            following: []
+          };
         }
 
         async componentDidMount(){
-          const companies = (await axios.get('https://acme-users-api-rev.herokuapp.com/api/companies')).data;
-          console.log(companies);
           const user = await fetchUser();
-          console.log(user);
+          const companies = (await axios.get('https://acme-users-api-rev.herokuapp.com/api/companies')).data;
+
+
+
         }
         render(){
           return <hr />;
