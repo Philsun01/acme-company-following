@@ -26,14 +26,26 @@
         async componentDidMount(){
           const user = await fetchUser();
           const companies = (await axios.get('https://acme-users-api-rev.herokuapp.com/api/companies')).data;
+          //console.log(companies);
+          this.setState( { companies } );
 
+          console.log(this.state.companies);
         }
         render(){
+          const companyNames = this.state.companies
           return (
             <div>
+              { companyNames.map(company=>{
+                return (
+                  <h1>company.name</h1>
+
+                  ['',1,2,3,4,5].map( num => <option key={num} > {num}</option>)
+                )
+
+              }) }
               <select>
               {
-              ['',1,2,3,4,5].map( num => <option key={num} > {num}</option>)
+
               }
               </select>
             </div>
