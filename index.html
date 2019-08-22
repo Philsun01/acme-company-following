@@ -16,7 +16,7 @@
       class App extends Component{
         constructor(){
           super();
-          this.state {
+          this.state = {
             users: {},
             companies: [],
             following: []
@@ -27,11 +27,17 @@
           const user = await fetchUser();
           const companies = (await axios.get('https://acme-users-api-rev.herokuapp.com/api/companies')).data;
 
-
-
         }
         render(){
-          return <hr />;
+          return (
+            <div>
+              <select>
+              {
+              ['',1,2,3,4,5].map( num => <option key={num} > {num}</option>)
+              }
+              </select>
+            </div>
+          );
         }
       }
       const root = document.querySelector('#root');
